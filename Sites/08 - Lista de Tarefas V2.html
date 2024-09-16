@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas V2</title>
+</head>
+<body>
+    <h1>Lista de Tarefas</h1>
+    <p>
+    Adicionar tarefa: <input type='text' id='it'>
+    <input type='button' value='Adicionar' onclick='exe()'>
+    </p>
+    
+    <p>
+        <ul id="lista">
+
+        </ul>
+    </p>
+
+    <script>
+        let lista = document.getElementById("lista");
+        
+
+        function exe(){
+            let item = document.getElementById("it").value;
+            
+            let novaTarefa = document.createElement("li");
+            novaTarefa.textContent = item;
+            lista.appendChild(novaTarefa);
+
+            document.getElementById("it").value = "";
+        }
+
+    </script>
+</body>
+</html>

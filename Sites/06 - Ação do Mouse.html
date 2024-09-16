@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ação do Mouse</title>
+</head>
+<body>
+    <input type="button" value="Clique" id="clique">
+    <input type="button" value="Limpa" id="limpa">
+    
+    <br><p id="paragrafos"></p>
+
+    <script>
+        let p = document.getElementById("paragrafos");
+        let b = document.getElementById("clique");
+        
+        b.addEventListener("mouseover",funcaox);
+        b.addEventListener("click",funcaoy);
+        b.addEventListener("mouseout",funcaoz);
+        document.getElementById("limpa").addEventListener("click",clear);
+        
+        function funcaox(){
+            p.innerHTML+=("Mouse Sobre <br>");
+        }
+        function funcaoy(){
+            p.innerHTML+=("Botão Clicado <br>");
+        }
+        function funcaoz(){
+            p.innerHTML+=("Saiu do Botão <br>");
+        }
+        function clear(){
+            p.innerHTML=("");
+        }
+
+    </script>
+
+
+</body>
+</html>

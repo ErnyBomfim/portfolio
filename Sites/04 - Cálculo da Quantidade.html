@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+    </style>
+    <title>Cálculo da Quantidade</title>
+</head>
+<body>
+    <h1>Quantidade de homens e mulheres de uma turma da faculdade</h1>
+    <table>
+        <tr>
+            <td>Quantidade de homens:</td>
+            <td><input type="number" id="qnt_homens"></td>
+        </tr>
+        <tr>
+            <td>Quantidade de mulheres:</td>
+            <td><input type="number" id="qnt_mulheres"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Calcular" onclick="calc_percent()"></td>
+        </tr>
+    </table>
+    <br><br>
+    <div id="tabela_porcentagem"></div>
+
+    <script>
+        function calc_percent(){
+            let qnt_mulheres = parseInt(document.getElementById("qnt_mulheres").value);
+            let qnt_homens = parseInt(document.getElementById("qnt_homens").value);
+        
+            let soma = qnt_mulheres + qnt_homens;
+            let per_mulheres = (qnt_mulheres/soma)*100;
+            let per_homens = (qnt_homens/soma)*100;
+            
+            // alert(`Quantidade de Homens: ${qnt_homens}, Quantidade de Mulheres: ${qnt_mulheres}.`)
+            // alert(`Percentual de Homens: ${per_homens.toFixed(2)}, Percentual de Mulheres: ${per_mulheres.toFixed(2)}.`)
+
+            let tabela = "<table>";
+                tabela += "<tr><td></td><td>Quantidade</td><td>Percentual</td></tr>";
+                tabela += "<tr><td>Homens</td><td>"+qnt_homens+"</td><td>"+per_homens.toFixed(2)+"%</td></tr>";
+                tabela += "<tr><td>Mulheres</td><td>"+qnt_mulheres+"</td><td>"+per_mulheres.toFixed(2)+"%</td></tr>";
+                tabela += "</table>";
+
+            document.getElementById("tabela_porcentagem").innerHTML = tabela;
+        }
+
+    </script>
+
+</body>
+</html>

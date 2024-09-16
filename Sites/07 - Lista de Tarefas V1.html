@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas V1</title>
+</head>
+<body>
+    <p>Clique em iniciar e digite os itens da sua lista de tarefas.</p>
+    <input type="button" value="Iniciar" onclick="loop()">
+    <p id="paragrafos"></p>
+
+    <script>
+        let lista = [];
+        let p = "S";
+        let i = 1;
+        
+
+        function loop(){
+            while (p == "S"){
+                lista.push(prompt(`Digite o ${i}º item da lista:`));
+                p = prompt("Deseja adicionar mais um item na lista? [S/N]");
+                p = p.toUpperCase();
+                i++;
+            }
+
+            document.getElementById("paragrafos").innerHTML = "Aqui está sua lista de tarefas:<br>-----------<br>";
+            for (let i=0; i<lista.length; i++){
+                document.getElementById("paragrafos").innerHTML += (`${i+1}º - ${lista[i]}<br>`); 
+            }
+        }
+
+
+    </script>
+</body>
+</html>
