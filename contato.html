@@ -18,9 +18,9 @@
         <hr>
     </nav>
 
-    <!-- seção com formulário de contato -->
     <section class="quadro">
         
+        <!-- seção com formulário de contato -->
         <div>
             <h1 class="titulo">Contato</h1>
 
@@ -40,6 +40,10 @@
                         <td><label>Mensagem: </label></td>
                         <td><textarea title="mensagem"></textarea>
                     </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" value="Enviar" onclick="enviarForm()"></td>
+                    </tr>
                 </table>
             </form>
 
@@ -56,5 +60,12 @@
         <img class="" src="img/cafe.png" title="café" alt="café">
 
     </section>
+    
+    <!-- script para confirmação de envio da mensagem -->
+    <script>
+        function enviarForm(){
+            alert("Mensagem enviada com sucesso!")
+        }
+    </script>
 </body>
 </html>
